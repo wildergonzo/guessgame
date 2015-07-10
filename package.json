@@ -1,0 +1,25 @@
+{
+  "name": "guessgame",
+  "version": "1.0.0",
+  "description": "console version of memory cards game",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wildergonzo/guessgame.git"
+  },
+  "keywords": [
+    "guessgame"
+  ],
+  "author": "jala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wildergonzo/guessgame/issues"
+  },
+  "homepage": "https://github.com/wildergonzo/guessgame"
+}
