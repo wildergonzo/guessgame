@@ -1,19 +1,42 @@
-var Board = function () {    
+var Board = function () {
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    var rows = 0, cols = 0;
+    
     var createMatrix = function (rows,cols) {
         var x = [];
         for (var i = 0; i < rows; i++) {
             x[i] = new Array(cols);
         }
         return x;
-    }
+    };
+    
     var printMatrix = function (matrix) {
         for (var i = 0; i < matrix.length; i++) {
             console.log(matrix[i]);
         }
-    }
-
-    this.generateBoard = function (size) {
-        var rows = 0, cols = 0;
+    };
+    
+    var fillMatrix = function (matrix, size) {
+        var x = 0, y = 0, pair = 0;
+        for (var i=0; i<size ; i++) {
+            pair = 0;
+            while (pair<2){    
+                x = 0;
+                y = Math.floor((Math.random() * (size*2)) + 1);
+                while (y > matrix[0].length) {
+                    y -= matrix[0].length;
+                    x += 1;
+                }
+                if (typeof matrix[x][y-1] === "undefined") {
+                    matrix[x][y-1] = letters[i];
+                    pair +=1;
+                }
+            }
+        }
+        return matrix;
+    };
+    
+    this.generateBoard = function (size) {        
         switch (size){
         case 1:
           rows=1;
@@ -57,12 +80,7 @@ var Board = function () {
           break;
         }
         var matrix = createMatrix(rows, cols);
-        for(var i=0; i<rows; i++){
-            for (var j=0; j<cols; j++){
-              matrix[i][j] = 'X';
-            }
-        }
-        printMatrix(matrix);
+        printMatrix(fillMatrix(matrix, size));
     };
 };
 module.exports = Board;
