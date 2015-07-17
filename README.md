@@ -3,5 +3,6 @@ console version of Match Match game, is a card game in which all of the cards ar
 
 #### instrunctions
 ```
-node app.js
+npm install
+node game.js
 ```
