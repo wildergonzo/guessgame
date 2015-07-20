@@ -1,13 +1,24 @@
 var Board = function () {
-    var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    var rows = 0, cols = 0;
-    this.matrix = [];
+    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+    var rows = 0, cols = 0;    
+    var matrix = [];
+    var clonedMatrix = [];
+    
     var create2DArray = function (r, c) {
         var x = [];
         for (var i = 0; i < r; i++) {
             x[i] = new Array(c);
         }
         return x;
+    };
+    
+    var createClonedMatrix = function (rows, cols) {
+        clonedMatrix = create2DArray(rows, cols);
+        for (var i = 0; i < rows; i++) {
+            for (var j = 0; j < cols; j++) {
+                clonedMatrix[i][j] = 'x';
+            }
+        }
     };
   
     this.printBoard = function () {
@@ -79,12 +90,36 @@ var Board = function () {
               cols=5;
               break;
         }
-        this.matrix = fillMatrix(create2DArray(rows, cols), size);
+        matrix = fillMatrix(create2DArray(rows, cols), size);
+        createClonedMatrix(rows, cols);
     }; 
     
+    this.setClonedMatrix = function (m1x, m1y, m2x, m2y, val) {
+        clonedMatrix[m1x][m1y] = val;
+        clonedMatrix[m2x][m2y] = val;
+    };
+    
     this.getValue = function (posX, posY) {
-        //console.log(this.matrix[posX][posY]);
-        return this.matrix[posX][posY];
+        return matrix[posX][posY];
+    };
+    
+    this.getMatrix = function () {
+        return matrix;
+    };
+    
+    this.getClonedMatrix = function () {
+        return clonedMatrix;
+    };
+    
+    this.clonedMatrixIsFull = function () {
+        for (var i = 0; i < rows; i++) {
+            for (var j = 0; j < cols; j++) {
+                if (clonedMatrix[i][j] === 'x'){
+                    return false;
+                }                
+            }
+        }
+        return true;
     };
 };
 module.exports = Board;
