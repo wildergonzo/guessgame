@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/wildergonzo/guessgame",
   "devDependencies": {
+    "better-console": "^0.2.4",
     "sync-prompt": "^0.4.2"
   }
 }
