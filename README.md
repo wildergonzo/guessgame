@@ -8,7 +8,7 @@ npm install
 ```
 #### to play
 ```
-npm start
+npm play
 ```
 #### to execute tests
 ```
