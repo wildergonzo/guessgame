@@ -1,8 +1,16 @@
 # guessgame
-console version of Match Match game, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn.
+console version of match match game, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn.
 
-#### instrunctions
+## instructions
+#### to install dependencies
 ```
 npm install
-node game.js
+```
+#### to play
+```
+npm play
+```
+#### to execute tests
+```
+npm test
 ```

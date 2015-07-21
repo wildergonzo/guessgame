@@ -20,12 +20,6 @@ var Board = function () {
             }
         }
     };
-  
-    this.printBoard = function () {
-        for (var i = 0; i < this.matrix.length; i++) {
-            console.log(this.matrix[i]);
-        }
-    };
     
     var fillMatrix = function (matrix, size) {
         var x = 0, y = 0, pair = 0;

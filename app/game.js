@@ -3,14 +3,14 @@ var console = require('better-console');
 var Board = require('./board.js');
 var Player = require('./player.js');
 var board = new Board();
-var player = new Player();
 var g1x = 0, g1y = 0, g2x = 0, g2y = 0;
 var guess1 = '', guess2 = '';
 var gameover = false;
 
+console.log('---------');
 console.info('guessgame');
 console.log('---------');
-player.setNickname(prompt('enter name: '));
+var player = new Player(prompt('enter name: '));
 console.warn('welcome ' + player.getNickname());
 board.createBoard(parseInt(prompt('enter level(1-10): ')));
 console.table(board.getMatrix());
@@ -40,6 +40,7 @@ do {
         console.error('sorry.. no match for the combination, please try again..');        
     }
 } while(!gameover)
-console.log('------------------------------------------------------------');
-console.warn('congratulations!, you discovered the entire table!, you won!');
-console.log('------------------------------------------------------------');
+    
+console.log('--------------------------------------------------------------------');
+console.warn('congratulations ' + player.getNickname() + '!, you discovered the entire table!');
+console.log('--------------------------------------------------------------------');
