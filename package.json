@@ -2,12 +2,13 @@
   "name": "guessgame",
   "version": "1.0.0",
   "description": "console version of memory cards game",
-  "main": "game.js",
+  "main": "./app/game.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "test"
+    "test": "jasmine-node --verbose spec",
+    "start": "node ./app/game.js"
   },
   "repository": {
     "type": "git",
